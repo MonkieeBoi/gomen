@@ -39,6 +39,15 @@ type Operation struct {
 	y        int
 }
 
+func NewOperation(mino Mino, rotation Rotation, x int, y int) Operation {
+	return Operation{
+		mino:     mino,
+		rotation: rotation,
+		x:        x,
+		y:        y,
+	}
+}
+
 func (op Operation) Shape() [][2]int {
 	shape := [][2]int{}
 	for _, offs := range shapes[op.mino][op.rotation] {
