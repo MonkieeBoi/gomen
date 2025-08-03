@@ -56,6 +56,21 @@ func (op Operation) Shape() [][2]int {
 	return shape
 }
 
+func minoMirror(m Mino) Mino {
+	switch m {
+	case M_L:
+		return M_J
+	case M_Z:
+		return M_S
+	case M_J:
+		return M_L
+	case M_S:
+		return M_Z
+	default:
+		return m
+	}
+}
+
 func init() {
 	shapes = map[Mino]map[Rotation][][2]int{
 		M__: {},
